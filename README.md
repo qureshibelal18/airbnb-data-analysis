@@ -1,3 +1,5 @@
+# 🏠 Airbnb Data Analysis using Python 
+
 ## 🔍 Key Insights
 
 The exploratory analysis of the Airbnb dataset revealed several important patterns related to pricing, room types, neighbourhoods, and customer reviews.
