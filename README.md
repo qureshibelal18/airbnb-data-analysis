@@ -1,103 +1,3 @@
-# 🏠 Airbnb Data Analysis & Exploratory Data Analysis
-
-## 📌 Project Overview
-
-This project performs an in-depth **Exploratory Data Analysis (EDA)** on an Airbnb listings dataset to understand pricing patterns, room-type distribution, neighbourhood-wise listings, and review trends.
-
-The project focuses on transforming raw Airbnb data into meaningful insights through **data cleaning, preprocessing, statistical analysis, and visualization using Python**.
-
-The analysis helps understand how factors such as **room type, location, listing price, and reviews** vary across Airbnb properties.
-
----
-
-## 🎯 Objectives
-
-The main objectives of this project are:
-
-- Perform data cleaning and preprocessing
-- Identify and handle missing values
-- Remove duplicate records
-- Convert incorrect data types into appropriate formats
-- Analyze listing price distributions
-- Understand the distribution of different room types
-- Analyze Airbnb listings across neighbourhood groups
-- Study the relationship between room type and price
-- Analyze the number of reviews over time
-- Generate meaningful business insights from the dataset
-
----
-
-## 📊 Dataset
-
-The dataset contains Airbnb listing information with details about:
-
-- Property and host information
-- Neighbourhood and geographical information
-- Room types
-- Listing prices
-- Service fees
-- Minimum nights
-- Number of reviews
-- Review ratings
-- Availability
-- Cancellation policies
-- Host verification
-- Construction year
-
-### Dataset Size
-
-**Initial Dataset:**
-- Rows: `102,599`
-- Columns: `26`
-
-**After Data Cleaning:**
-- Rows: `101,410`
-- Columns: `24`
-
-The original dataset contained columns such as `id`, `NAME`, `host id`, `host_identity_verified`, `host name`, `neighbourhood group`, `neighbourhood`, `lat`, `long`, `room type`, `price`, `service fee`, `minimum nights`, `number of reviews`, `last review`, `reviews per month`, `review rate number`, and `availability 365`.
-
----
-
-## 🛠️ Technologies & Libraries Used
-
-### Programming Language
-- Python
-
-### Libraries
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-
-### Environment
-- Google Colab / Jupyter Notebook
-
----
-
-## 🔄 Project Workflow
-
-Raw Airbnb Dataset
-        ↓
-Data Loading
-        ↓
-Data Understanding
-        ↓
-Missing Value Analysis
-        ↓
-Data Cleaning
-        ↓
-Data Type Conversion
-        ↓
-Duplicate Removal
-        ↓
-Descriptive Statistics
-        ↓
-Exploratory Data Analysis
-        ↓
-Data Visualization
-        ↓
-Business Insights
-
 ## 🔍 Key Insights
 
 The exploratory analysis of the Airbnb dataset revealed several important patterns related to pricing, room types, neighbourhoods, and customer reviews.
@@ -105,10 +5,10 @@ The exploratory analysis of the Airbnb dataset revealed several important patter
 ### 💰 1. Listing Price Insights
 
 - The average Airbnb listing price is approximately **$625**.
-- The median listing price is also around **$625**.
-- Listing prices range from approximately **$50 to $1,200**.
+- The median listing price is approximately **$625**.
+- Listing prices range from **$50 to $1,200**.
 - The price distribution covers a wide range, indicating considerable variation in accommodation costs.
-- The histogram shows that listings are spread relatively evenly across the available price ranges rather than being concentrated in one particular range.
+- The histogram shows that listings are distributed across different price ranges rather than being concentrated in one specific range.
 
 ---
 
@@ -123,12 +23,12 @@ The analysis identified four major room types:
 
 Key observations:
 
-- **Entire home/apt** is the most common room type in the dataset.
+- **Entire home/apt** is the most common room type.
 - **Private room** is the second most common category.
 - **Shared room** listings represent a much smaller portion of the marketplace.
 - **Hotel room** listings are the least represented category.
 
-This suggests that Airbnb listings in the dataset are primarily focused on **entire homes/apartments and private rooms**.
+This indicates that Airbnb listings in the dataset are primarily focused on **entire homes/apartments and private rooms**.
 
 ---
 
@@ -144,8 +44,8 @@ The areas with the highest number of listings are:
 
 In comparison:
 
-- Bronx has considerably fewer listings.
-- Staten Island has the lowest number of listings among the major neighbourhood groups.
+- **Bronx** has considerably fewer listings.
+- **Staten Island** has the lowest number of listings.
 
 This indicates that Airbnb activity is strongly concentrated in **Manhattan, Brooklyn, and Queens**.
 
@@ -160,7 +60,7 @@ Key observations:
 - Different room types show differences in their price distributions.
 - The price ranges of the room types overlap considerably.
 - **Shared rooms** and **hotel rooms** show different pricing patterns compared with private rooms and entire homes/apartments.
-- Price alone does not completely distinguish the different room categories, as there is considerable overlap in their distributions.
+- Price alone does not completely distinguish the different room categories because there is considerable overlap between their distributions.
 
 ---
 
@@ -170,7 +70,7 @@ The number of reviews was analyzed over time using the `last review` date.
 
 Key observations:
 
-- Review activity varies significantly across different periods.
+- Review activity varies across different periods.
 - Noticeable spikes in review activity can be observed around **2019 and 2020**.
 - Review activity is relatively low during several other periods.
 - This indicates that customer engagement was not uniform throughout the entire timeline.
@@ -184,11 +84,12 @@ The original dataset contained **102,599 records and 26 columns**.
 During preprocessing:
 
 - Missing values were identified across multiple columns.
-- Important text fields such as `NAME` and `host name` were cleaned by removing rows where these fields were missing.
+- Rows with missing values in important fields such as `NAME` and `host name` were removed.
 - `last review` was converted into a proper datetime format.
 - Currency symbols were removed from `price` and `service fee`.
 - Duplicate records were removed.
 - Highly incomplete columns such as `license` and `house_rules` were removed.
+- Inconsistent neighbourhood names such as `Brookln` and `Manhatan` were corrected.
 
 After cleaning, the dataset contained:
 
@@ -198,36 +99,39 @@ After cleaning, the dataset contained:
 
 ## 📈 Business Insights
 
-The findings from the analysis can be useful for Airbnb hosts, property managers, and marketplace analysts.
+The findings from the analysis can be useful for Airbnb hosts, property managers, and business analysts.
 
-### For Airbnb Hosts
+### 🏠 For Airbnb Hosts
 
 - Hosts can compare their property type and pricing with the broader listing distribution.
 - Understanding neighbourhood-level competition can help hosts evaluate their market position.
-- Room type plays an important role in understanding the pricing structure of listings.
+- Room type is an important factor when analyzing the pricing structure of listings.
+- Hosts can consider location, room type, reviews, and availability when positioning their properties.
 
-### For Property Managers
+### 📍 For Property Managers
 
 - **Manhattan, Brooklyn, and Queens** represent the largest listing markets in the dataset.
-- These areas may provide greater market activity but could also indicate stronger competition.
+- These areas have a high concentration of Airbnb listings and may therefore represent highly competitive markets.
+- Neighbourhood-level analysis can help property managers understand market concentration.
 - Pricing and room-type analysis can support better property positioning.
 
-### For Customers
+### 👥 For Customers
 
 - Customers have a wide range of accommodation prices to choose from.
-- Entire homes/apartments and private rooms provide the majority of available options.
-- Accommodation type and location are important factors when comparing listings.
+- **Entire homes/apartments and private rooms** provide the majority of available options.
+- Location and accommodation type are important factors when comparing Airbnb listings.
+- The wide price range provides options for customers with different budgets.
 
-### For Business Analysts
+### 📊 For Business Analysts
 
-The analysis demonstrates that Airbnb's marketplace is influenced by:
+The analysis demonstrates that Airbnb's marketplace can be examined using factors such as:
 
 - **Location**
 - **Room type**
 - **Listing price**
 - **Customer review activity**
 
-These variables can be further explored to understand marketplace behaviour and support data-driven decisions.
+These variables can be further analyzed to understand marketplace behaviour and support data-driven decision-making.
 
 ---
 
@@ -235,16 +139,20 @@ These variables can be further explored to understand marketplace behaviour and 
 
 | Area | Key Finding |
 |------|-------------|
-| Dataset Size | 102,599 → 101,410 records after cleaning |
+| Original Dataset | 102,599 records |
+| Final Dataset | 101,410 records |
+| Original Columns | 26 |
+| Final Columns | 24 |
 | Average Price | ~$625 |
 | Median Price | ~$625 |
 | Price Range | $50 – $1,200 |
 | Most Common Room Type | Entire home/apt |
-| Second Most Common | Private room |
+| Second Most Common Room Type | Private room |
 | Top Neighbourhood Group | Manhattan |
-| Other Major Markets | Brooklyn & Queens |
-| Lowest Major Market | Staten Island |
-| Review Trend | Significant activity spikes around 2019–2020 |
+| Second Major Market | Brooklyn |
+| Third Major Market | Queens |
+| Lowest Listing Count | Staten Island |
+| Review Trend | Activity varies over time |
 | Main Analysis Areas | Price, Room Type, Location & Reviews |
 
 ---
@@ -253,6 +161,37 @@ These variables can be further explored to understand marketplace behaviour and 
 
 The analysis shows that Airbnb listings are **geographically concentrated, dominated by entire homes/apartments and private rooms, and characterized by a broad range of listing prices**.
 
-The strong concentration of listings in **Manhattan, Brooklyn, and Queens** highlights the importance of location in the Airbnb marketplace. At the same time, differences in room-type pricing and changes in review activity provide opportunities for deeper analysis.
+The strong concentration of listings in **Manhattan, Brooklyn, and Queens** highlights the importance of location in the Airbnb marketplace.
 
-This project demonstrates how **Python, Pandas, Matplotlib, and Seaborn** can be used to convert raw marketplace data into actionable insights through Exploratory Data Analysis.
+The analysis of room types shows that **entire homes/apartments and private rooms** make up the majority of listings, while shared rooms and hotel rooms represent a much smaller proportion.
+
+The price analysis shows a wide range of accommodation costs, with listing prices ranging from **$50 to $1,200** and an average price of approximately **$625**.
+
+The review analysis also shows that customer review activity changes over time, providing an opportunity for further investigation into customer engagement and marketplace behaviour.
+
+Overall, this project demonstrates how **Python, Pandas, NumPy, Matplotlib, and Seaborn** can be used to clean real-world marketplace data, perform Exploratory Data Analysis, visualize important patterns, and generate meaningful business insights.
+
+---
+
+## 🚀 Future Scope
+
+The analysis can be extended further by:
+
+- Building an Airbnb price prediction model
+- Performing neighbourhood-wise price analysis
+- Conducting correlation and feature analysis
+- Detecting and treating price outliers
+- Performing customer review sentiment analysis
+- Building an Airbnb recommendation system
+- Creating an interactive Power BI dashboard
+- Predicting listing demand
+- Performing customer segmentation
+- Analyzing host performance
+
+---
+
+## ⭐ If You Find This Project Useful
+
+If you find this project useful or interesting, please consider giving the repository a ⭐ on GitHub.
+
+Your support and feedback are highly appreciated!
